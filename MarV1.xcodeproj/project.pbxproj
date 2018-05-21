@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9ACC3EF020B2B6E6007A9B8D /* marshabitatpricer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC3EEF20B2B6E6007A9B8D /* marshabitatpricer.mlmodel */; };
 		9AD5B75620ABF90F001FB00C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5B75520ABF90F001FB00C /* AppDelegate.swift */; };
 		9AD5B75820ABF90F001FB00C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5B75720ABF90F001FB00C /* ViewController.swift */; };
 		9AD5B75B20ABF90F001FB00C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5B75920ABF90F001FB00C /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9ACC3EEF20B2B6E6007A9B8D /* marshabitatpricer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = marshabitatpricer.mlmodel; path = ../../../Desktop/marshabitatpricer.mlmodel; sourceTree = "<group>"; };
 		9AD5B75220ABF90F001FB00C /* MarV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AD5B75520ABF90F001FB00C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AD5B75720ABF90F001FB00C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		9AD5B75420ABF90F001FB00C /* MarV1 */ = {
 			isa = PBXGroup;
 			children = (
+				9ACC3EEF20B2B6E6007A9B8D /* marshabitatpricer.mlmodel */,
 				9AD5B75520ABF90F001FB00C /* AppDelegate.swift */,
 				9AD5B75720ABF90F001FB00C /* ViewController.swift */,
 				9AD5B75920ABF90F001FB00C /* Main.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACC3EF020B2B6E6007A9B8D /* marshabitatpricer.mlmodel in Sources */,
 				9AD5B75820ABF90F001FB00C /* ViewController.swift in Sources */,
 				9AD5B75620ABF90F001FB00C /* AppDelegate.swift in Sources */,
 			);
