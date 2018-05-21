@@ -15,9 +15,18 @@ enum Feature: Int{
 
 class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
 
-    //let model = MarHabitatPricer()
-
+    let model = marshabitatpricer()
     
+    let priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.maximumFractionDigits = 0
+        formatter.usesGroupingSeparator = true
+        formatter.locale = Locale(identifier: "en_US")
+        return formatter
+    }()
+    
+    @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     
     private let solarPanelsDataSource = SolarPanelDataSource()
@@ -28,6 +37,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        updatePredictedPrice()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +47,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
         print(" Selected row = ", row)
+        
+        updatePredictedPrice()
     }
     
     
@@ -91,6 +103,25 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         return 3
     }
     
+    
+    func updatePredictedPrice(){
+        func selectedRow(for feature: Feature) -> Int{
+            return pickerView.selectedRow(inComponent: feature.rawValue)
+        }
+        let solarPanels = self.value(for: selectedRow(for: .solarPanels), feature: .solarPanels)
+        let greenhouses = self.value(for: selectedRow(for: .greenhouses), feature: .greenhouses)
+        let size = self.value(for: selectedRow(for: .size), feature: .size)
+        
+        print("solarPanels =", solarPanels, greenhouses, size)
+        
+        guard let marsHabitatPricerOutput = try? model.prediction(solarPanels: solarPanels, greenhouses: greenhouses, size: size) else{
+            fatalError("Unexpected runtime error.")
+        }
+        
+        let price = marsHabitatPricerOutput.price
+        priceLabel.text = priceFormatter.string(for: price)
+
+    }
 }
 
 

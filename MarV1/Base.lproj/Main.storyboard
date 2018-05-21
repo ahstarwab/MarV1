@@ -53,7 +53,46 @@
                                     </pickerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYn-gN-Msv">
                                         <rect key="frame" x="0.0" y="431.5" width="375" height="215.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TVx-zo-Zwx">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Predicted Price(millions)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvS-iO-ipJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Price Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRg-0T-D7o">
+                                                        <rect key="frame" x="0.0" y="20.5" width="375" height="195"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="dvS-iO-ipJ" firstAttribute="leading" secondItem="TVx-zo-Zwx" secondAttribute="leading" id="5HJ-aN-UW5"/>
+                                                    <constraint firstItem="BRg-0T-D7o" firstAttribute="leading" secondItem="TVx-zo-Zwx" secondAttribute="leading" id="CZa-R0-g6L"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dvS-iO-ipJ" secondAttribute="trailing" id="Sno-1K-8be"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BRg-0T-D7o" secondAttribute="trailing" id="vC4-om-7Uj"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="TVx-zo-Zwx" firstAttribute="leading" secondItem="TYn-gN-Msv" secondAttribute="leading" id="ADk-d6-FmW"/>
+                                            <constraint firstAttribute="bottom" secondItem="TVx-zo-Zwx" secondAttribute="bottom" id="EUE-vJ-amY"/>
+                                            <constraint firstAttribute="bottom" secondItem="TVx-zo-Zwx" secondAttribute="bottom" id="Ei6-gk-ta8"/>
+                                            <constraint firstItem="TVx-zo-Zwx" firstAttribute="top" secondItem="TYn-gN-Msv" secondAttribute="top" id="HTo-vc-mCC"/>
+                                            <constraint firstAttribute="bottom" secondItem="TVx-zo-Zwx" secondAttribute="bottom" id="Nej-Qj-s7M"/>
+                                            <constraint firstItem="TVx-zo-Zwx" firstAttribute="leading" secondItem="TYn-gN-Msv" secondAttribute="leading" id="WkY-Lb-8If"/>
+                                            <constraint firstItem="TVx-zo-Zwx" firstAttribute="top" secondItem="TYn-gN-Msv" secondAttribute="top" id="Y2H-0y-sUh"/>
+                                            <constraint firstItem="TVx-zo-Zwx" firstAttribute="leading" secondItem="TYn-gN-Msv" secondAttribute="leading" id="Z9R-D7-Efi"/>
+                                            <constraint firstAttribute="trailing" secondItem="TVx-zo-Zwx" secondAttribute="trailing" id="dbE-kV-grm"/>
+                                            <constraint firstAttribute="trailing" secondItem="TVx-zo-Zwx" secondAttribute="trailing" id="jQx-xi-z56"/>
+                                            <constraint firstAttribute="trailing" secondItem="TVx-zo-Zwx" secondAttribute="trailing" id="tv4-B9-Wol"/>
+                                            <constraint firstItem="TVx-zo-Zwx" firstAttribute="top" secondItem="TYn-gN-Msv" secondAttribute="top" id="vdh-xj-T0C"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -69,6 +108,7 @@
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="ma9-GS-sdT" id="2oA-Lk-5oL"/>
+                        <outlet property="priceLabel" destination="BRg-0T-D7o" id="8Z1-he-wk9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
